@@ -4,7 +4,7 @@ This is an example Chef cookbook for configuring a simple service, NTP, accross 
 
 In this example, just the default recipe is used to create the logic required to allow the cookbook to run on the two platforms, and achieve the task of configuring NTP properly on each one.
 
-With the relatively simple setup we are testing here, a single default recipe isn't too bad. However, even with NTP things can get more complicated.  For instance, with Red Hat, you may have different implimentations of the NTP serivce (ntpd and chrony) based on the version of RHEL you are running.  In that case, the differences aren't just with the platforms, but between versions within the same OS platform.
+With the relatively simple setup we are testing here, a single default recipe isn't too bad. However, even with NTP things can get more complicated.  [For instance](https://github.com/alanwthatcher/multi-platform-ntp-one-recipe/tree/more-complex), with Red Hat, you may have different implimentations of the NTP serivce (ntpd and chrony) based on the version of RHEL you are running.  In that case, the differences aren't just with the platforms, but between versions within the same OS platform.
 
 So, you see the code can become garbled and hardish to read fairly quickly.  To avoid that, it's sometimes better to use a different pattern. Such as:
 
@@ -13,4 +13,4 @@ So, you see the code can become garbled and hardish to read fairly quickly.  To 
 * recipes/redhat.rb - called form default.rb on Red Hat nodes
 * recipes/xxx.rb - called from default.rb on XXX nodes
 
-I also be created an example of that cookbook pattern in the [more-complex branch](https://github.com/alanwthatcher/multi-platform-ntp-one-recipe/tree/more-complex)
+I will create an example of that, and link it here.
