@@ -13,4 +13,4 @@ So, you see the code can become garbled and hardish to read fairly quickly.  To 
 * recipes/redhat.rb - called form default.rb on Red Hat nodes
 * recipes/xxx.rb - called from default.rb on XXX nodes
 
-I will also be creating an example of that cookbook pattern, and will link it here when it is complete.
+I also be created an example of that cookbook pattern in the [more-complex branch](https://github.com/alanwthatcher/multi-platform-ntp-one-recipe/tree/more-complex)
