@@ -4,7 +4,7 @@ This is an example Chef cookbook for configuring a simple service, NTP, accross 
 
 In this example, just the default recipe is used to create the logic required to allow the cookbook to run on the two platforms, and achieve the task of configuring NTP properly on each one.
 
-With the relatively simple setup we are testing here, a single default recipe isn't too bad. However, even with NTP things can get more complicated.  For instance, with Red Hat, you may have different implimentations of the NTP serivce (ntpd and chrony) based on the version of RHEL you are running.  In that case, the differences aren't just with the platforms, but between versions within the same OS platform.
+With the relatively simple setup we are testing here, a single default recipe isn't too bad. However, even with NTP things can get more complicated.  For instance, in this example, Red Hat releases have differnet providers.  RHEL 6 will use ntpd, while RHEL 7 will use chrony.  This adds a bit more obfuscation of purpose to the human readable aspect of the code.  While there is a lot to be said for succinctness, we also want to make it easy for others to modify our stuff when we aren't around.
 
 So, you see the code can become garbled and hardish to read fairly quickly.  To avoid that, it's sometimes better to use a different pattern. Such as:
 
