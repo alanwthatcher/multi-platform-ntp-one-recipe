@@ -32,6 +32,14 @@ template '/etc/ntp.conf' do
 end
 
 # Setup service: different name and actions per platform here
+# Red Hat is easy, we can just do :start, :enable
+# AIX is a little more messy.  We can do :start, but enable is handled via inittab
 service service_name do
   action service_action
+end
+
+# AIX ONLY: enable xntpd via inittab
+execute 'add xntpd to inittab on aix' do
+  command 'mkitab ntpd:2:wait:/usr/bin/startsrc -x xntpd > /dev/null 2>&1'
+  not_if 'lsitab ntpd'
 end
