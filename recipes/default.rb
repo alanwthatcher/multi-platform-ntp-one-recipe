@@ -17,12 +17,12 @@ when 'aix'
   service_action = [:start]
 end
 
-# Install package if RHEL
+# Install package if Red Hat
 package 'ntp' do
   only_if { node['platform'] == 'redhat' }
 end
 
-# Configure NTP configuration file: same path on both if using ntpd on RHEL
+# NTP configuration file: same path on both if using ntpd on Red Hat
 template '/etc/ntp.conf' do
   owner 'root'
   group node['root_group'] # may ohai keep us forever sane
