@@ -11,7 +11,7 @@ when 'redhat'
   case node['platform_version'].split('.')[0]
   when '6'
     # RHEL 6 settings: ntpd
-    pakcage_name = 'ntp'
+    package_name = 'ntp'
     service_name = 'ntpd'
     config_source = 'ntp.conf.erb'
     config_path = '/etc/ntp.conf'
